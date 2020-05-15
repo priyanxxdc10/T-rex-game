@@ -137,6 +137,10 @@ function draw() {
     ground.x = ground.width/2;
   }
   
+  if (mousePressedOver(restart)) {
+    reset();
+  }
+  
   trex.collide(invisibleGround);
   
   drawSprites();
@@ -148,10 +152,10 @@ function reset(){
   gameOver.visible = false;
   restart.visible = false;
   
-  ObstaclesGroup.destroyEach();
-  CloudsGroup.destroyEach();
+  obstaclesGroup.destroyEach();
+  cloudsGroup.destroyEach();
   
-  trex.setAnimation("trex");
+  trex.changeAnimation("trex");
   
   count = 0;
   
